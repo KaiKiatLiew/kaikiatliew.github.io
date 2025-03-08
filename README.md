@@ -26,9 +26,9 @@
 
 <br />
 
-<h3 align="center">Projects I've Worked On:</h3>
+<h3 align="center">Completed Projects:</h3>
 
-- **[High COE Prices: Are PHVs the Real Culprit?]()**: This op-ed showcases various data visualizations and storytelling techniques using R Programming.  
+- **[High COE Prices: Are PHVs the Real Culprit?]()**: This op-ed showcases various data visualizations and storytelling techniques using R Programming.
 - **Stay Tuned for More!**  
 
 <img align="center" alt="Coding" width="250" src="https://user-images.githubusercontent.com/74038190/212749447-bfb7e725-6987-49d9-ae85-2015e3e7cc41.gif">
