@@ -1,5 +1,5 @@
 <h1 align="center">👋 Hello, Kai Kiat here!</h1>
-<h3 align="center">A manager specializing in public sector funding policy and programme evaluation by day, an analytics student by night.</h3>
+<h3 align="center">A manager in resource planning and funding policy by day, an analytics student by night.</h3>
 <br />
 <img align="right" alt="Coding" width="80" src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif">
 
