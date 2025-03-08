@@ -22,6 +22,7 @@
 <h3 align="center">Languages and Tools:</h3>
 <p align="center">
 <a href="https://www.r-project.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/r/r-original.svg" alt="r" width="40" height="40"/></a>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rstudio/rstudio-original.svg" alt="rstudio logo" height="40" width="40"/>
 </p>
 
 <br />
@@ -32,4 +33,3 @@
 - **Stay Tuned for More!**  
 
 <img align="center" alt="Coding" width="300" src="https://user-images.githubusercontent.com/74038190/212749447-bfb7e725-6987-49d9-ae85-2015e3e7cc41.gif">
-
