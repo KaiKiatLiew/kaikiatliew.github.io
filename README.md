@@ -29,8 +29,8 @@
 
 <h3 align="center">📎 Completed Projects:</h3>
 
-- **[High COE Prices: Are PHVs the Real Culprit?]()**: Are PHVs really to blame for rising COE prices or is there more that meets the eye? Read on to find out! *R Studio was used for this op-ed.*
-- **Stay Tuned!**  
+- **[High COE Prices: Are PHVs the Real Culprit?](https://github.com/KaiKiatLiew/COE_Premium_Analysis)** Are PHVs really to blame for rising COE prices or is there more that meets the eye? Read on to find out! <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/r/r-original.svg" alt="r" width="20" height="20"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rstudio/rstudio-original.svg" alt="rstudio logo" height="20" width="20"/>
+- **Stay Tuned for More!**  
 
 <img align="center" alt="Coding" width="300" src="https://user-images.githubusercontent.com/74038190/212749447-bfb7e725-6987-49d9-ae85-2015e3e7cc41.gif">
 
