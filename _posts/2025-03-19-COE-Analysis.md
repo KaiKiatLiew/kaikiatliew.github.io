@@ -19,9 +19,9 @@ Are Private Hire Vehicle (PHV) to blame for rising COE prices? It has become a t
 
 ### 1.1 Evolution of Singapore’s Vehicle Ownership Policy
 
-Singapore is an island republic with an estimated land area of 735.6 square kilometres (KM2) (Singstat, 2024) and is ranked as the world’s third most densely populated country in 2024, with an average population density of 8,123/KM2 (Countries by population density: Countries by density 2024). As a land-scarce country, managing vehicle population while alleviating urban traffic congestion have been key priorities since Singapore’s independence. In her formative years, Singapore adopted a fiscal restraints approach to regulate vehicle population where various taxes were introduced. These included import duties, a lump sum registration fee, an Additional Registration Fee (ARF), as well as annual road taxes based on vehicle capacity (Phang, 1993). 
+Singapore is an island republic with an estimated land area of 735.6 square kilometres (KM2) and is ranked as the world’s third most densely populated country in 2024, with an average population density of 8,123/KM2 (Countries by population density: Countries by density 2024). As a land-scarce country, managing vehicle population while alleviating urban traffic congestion have been key priorities since Singapore’s independence. In her formative years, Singapore adopted a fiscal restraints approach to regulate vehicle population where various taxes were introduced. These included import duties, a lump sum registration fee, an Additional Registration Fee (ARF), as well as annual road taxes based on vehicle capacity. 
 
-As ARF grew exponentially in the mid-1970s, the government introduced the Preferential Additional Registration Fee (PARF) scheme as a pre-emptive measure to deter existing owners from opting against replacing their cars as prevailing market conditions were unfavourable towards car replacement (Phang, 1993). PARF offers an attractive rebate when owners opt to scrap their vehicle within ten years from registering a new car with the goal of incentivising car replacement while reducing the average age of cars on public roads.
+As ARF grew exponentially in the mid-1970s, the government introduced the Preferential Additional Registration Fee (PARF) scheme as a pre-emptive measure to deter existing owners from opting against replacing their cars as prevailing market conditions were unfavourable towards car replacement. PARF offers an attractive rebate when owners opt to scrap their vehicle within ten years from registering a new car with the goal of incentivising car replacement while reducing the average age of cars on public roads.
 
 Although PARF was successful in reducing the average age of cars, it was not without its flaws. Rising ARFs, coupled with an appreciation to foreign currencies (e.g. Japanese Yen), as well as the lack of proportional adjustments to PARF rates throughout 1980s resulted in an inflated scrap car prices and unintended profits. In other words, vehicle owners were incentivised to purchase cheaper made cars for resale at higher scrap values instead. Despite government intervention through additional taxes on car consumption (e.g. petrol tax, road tax), doubling of car park fees in public housing estates as well as extending time restrictions during peak hours to the usage of popular roads (e.g. in the Central Business District), car ownership in Singapore continued to rise, highlighting distortions in existing policy.
 
@@ -31,7 +31,6 @@ Over the years, several refinements have been made to improve VQS, including enh
 
 Table 1: Classifications of Vehicle Categories
 ![Table 1](assets/COE/Table_1.png)
-*Note. From “History of COE, and how it has evolved since 1990”, by Ho.T, 2023.*
 
 ## 2.0 Data Analysis
 
@@ -53,7 +52,7 @@ However, the presence of both significant events alone does not provide sufficie
 
 As a land-scarce nation, the supply of vehicles on public roads are policy driven where it is Government mandated and administered through VQS. Under VQS, the annual supply of vehicle (quota) is determined based on a rolling average of total deregistered vehicles over the previous four quarters allocated to its respective categories. In other words, batches of vehicles that were due for deregistering in a set year directly affects subsequent fluctuations in supply between January 2002 and January 2018.
 
-To top it off, initial vehicle growth-rate policy was set at 3% per annum (Omar & Rahman, 2019). However, from February 2018, the Ministry of Transport announced that the vehicle growth-rate shall be zero for all categories except Category C at 0.25% in tandem with Singapore’s car-lite policy which aims to shift perception from car ownership to increased use of public transportation. Since the announcement, a downward trend in vehicle supply can be observed, barring periods between April 2020 and June 2020 in view of an elevated safe distancing measure where no open biddings were held to prevent the spread of COVID-19. 
+To top it off, initial vehicle growth-rate policy was set at 3% per annum. However, from February 2018, the Ministry of Transport announced that the vehicle growth-rate shall be zero for all categories except Category C at 0.25% in tandem with Singapore’s car-lite policy which aims to shift perception from car ownership to increased use of public transportation. Since the announcement, a downward trend in vehicle supply can be observed, barring periods between April 2020 and June 2020 in view of an elevated safe distancing measure where no open biddings were held to prevent the spread of COVID-19. 
 
 ![Figure 3a](assets/COE/Figure_3a.png)
 ![Figure 3b](assets/COE/Figure_3b.png)
@@ -77,7 +76,7 @@ Singapore’s rapid economic growth is not without its consequences. Looking at 
 
 ![Figure 6](assets/COE/Figure_6.png)
 
-However, Singapore’s Gross Domestic Product (GDP) per capita has benefitted from its shift towards an advanced economy through embracing manufacturing value-added output. Between 2002 and 2024, Singaporean’s GDP per capita has amassed an astounding growth rate of 187%. As of 2023, Singapore is ranked fifth in GDP per capita, pulling its weight among other economic powerhouses such as The United States, Germany and Qatar (GDP per capita, by country 2023 | statista), further showcasing Singaporeans growing purchasing power. As a result, Singaporeans income growth can keep pace with rising cost of living for various necessities depicted within CPI chart in Figure 6. 
+However, Singapore’s Gross Domestic Product (GDP) per capita has benefitted from its shift towards an advanced economy through embracing manufacturing value-added output. Between 2002 and 2024, Singaporean’s GDP per capita has amassed an astounding growth rate of 187%. As of 2023, Singapore is ranked fifth in GDP per capita, pulling its weight among other economic powerhouses such as The United States, Germany and Qatar, further showcasing Singaporeans growing purchasing power. As a result, Singaporeans income growth can keep pace with rising cost of living for various necessities depicted within CPI chart in Figure 6. 
 
 ![Figure 7](assets/COE/Figure_7.png)
 
@@ -87,11 +86,11 @@ It is important to note that growing affluence also sparked a shift towards life
 
 ![Figure 8](assets/COE/Figure_8.png)
 
-The maximum loan tenure for the purchase of vehicle is capped at seven years with effect from 27 May 2016, regulated by the Monetary Authority of Singapore (MAS) (Rules for Motor Vehicle Loans 2016). Therefore, the five- and ten-year bond yields shown in Figure 8 are used as proxies to visualise fluctuating interest rates for car loans offered in the market. 
+The maximum loan tenure for the purchase of vehicle is capped at seven years with effect from 27 May 2016, regulated by the Monetary Authority of Singapore (MAS). Therefore, the five- and ten-year bond yields shown in Figure 8 are used as proxies to visualise fluctuating interest rates for car loans offered in the market. 
 
 Over the years, Singapore’s interest rate remains one of the lowest when compared to its counterparts as MAS’ monetary policy focuses on exchange rate than domestic interest rates to combat inflation. The consistent low interest rate, coupled with long loan duration may have served as a catalyst for aspiring car owners to participate in the COE bidding process while leveraging on debt, spurring the high demand observed in Figure 2 above.
 
-In addition, over 90% of vehicles are transacted through authorised dealerships, which holds an exclusive licence with the main manufacturer to distribute vehicles of a given brand (Houston et al., 2015). To provide an all-round package and convenience to consumers, most car dealers offer various COE packages, with the prominent one being “Guaranteed COE”. Under the guaranteed COE package, car dealers will make bids on behalf of consumers that are often higher than current market rate to secure a certificate fast.
+In addition, over 90% of vehicles are transacted through authorised dealerships, which holds an exclusive licence with the main manufacturer to distribute vehicles of a given brand. To provide an all-round package and convenience to consumers, most car dealers offer various COE packages, with the prominent one being “Guaranteed COE”. Under the guaranteed COE package, car dealers will make bids on behalf of consumers that are often higher than current market rate to secure a certificate fast.
 
 As consumers became receptive over the comfort and mechanics of such packages offered, coupled with the oligopolistic nature of car dealerships, their influence over COE premium results may have expanded over time, serving as additional catalyst to spur demand.
 
@@ -111,17 +110,17 @@ Visualising vehicle population in terms of its average numbers paints a similar 
 
 All arguments considered, I strongly believe that the emergence of PHVs alone is not the determining factor for rising COE premium, but rather, a convenient scapegoat to conclude this debate. Evidence presented within this op-ed suggests that natural market forces of supply and demand are at play. The supply side is largely policy driven (e.g.  Singapore’s car-lite policy, MOT’s zero-growth policy and cut-and-fill approach) with artificial sacristy brought onto vehicles being observed. On the other hand, demand is largely influenced by Singapore’s overall economic growth, complemented by Singaporean’s growing affluence and quality of life through rising GDP per capita where comfort is prioritised over practicality when financials allow. These factors, along with low borrowing rates, ultimately fuels growing demand for vehicles and creates opportunities for car dealership to exercise their influence over results of COE premium. 
 
-While some had argued that growth in demand for vehicles and COE premium is driven by foreigners, the proportion of bids won by foreigners remained low at approximately 2% as of October 2023 (Ong, 2024).
+While some had argued that growth in demand for vehicles and COE premium is driven by foreigners, the proportion of bids won by foreigners remained low at approximately 2% as of October 2023.
 
 Looking at the granular picture, one might agree that the rising COE premium simulates a cyclic succession pattern. This pattern begins with an increase in GDP per capita, which boosts consumer purchasing power and, consequently, the CPI. As a result, there is a higher likelihood of individuals wanting to own a car for convenience. They then approach car dealerships, which assist them in submitting bids to increase their chances of obtaining a COE. The oligopolistic nature of the car dealership industry in Singapore gives them control over bidding prices. This, combined with the government's car-lite and zero-growth policy, leads to rising COE premium as demand consistently exceeds supply.
 
-To break off from such pattern, some have suggested the creation of another bidding category reserved for PHVs only (Ong, 2024). However, I am of view that it may not be effective in stabilising COE premiums as total vehicle quota remains the same regardless. In addition, this suggestion may further saturate distribution to an already scarce resource, potentially driving up premiums further through the influence and control of car dealerships by their participation in the bidding process.
+To break off from such pattern, some have suggested the creation of another bidding category reserved for PHVs only. However, I am of view that it may not be effective in stabilising COE premiums as total vehicle quota remains the same regardless. In addition, this suggestion may further saturate distribution to an already scarce resource, potentially driving up premiums further through the influence and control of car dealerships by their participation in the bidding process.
 
 As the government is administering a shift to vehicle supply forward to ease rising COE premium, perhaps a more progressive step that compliments the implementation is to:
 
 - Bar car dealerships from making bids on behalf of consumers; and
 
-- Only allow first time vehicle-owners-to-be and existing owners whose COE are expiring (e.g. less than two years) to participate in the bidding process (Phang, 1993). 
+- Only allow first time vehicle-owners-to-be and existing owners whose COE are expiring (e.g. less than two years) to participate in the bidding process. 
 
 This pairing suggestion aims to discourage car dealerships from exercising greater control and influence over COE results while levelling the playing field for genuine buyers, ultimately stabilising COE premiums in the long run.
 
