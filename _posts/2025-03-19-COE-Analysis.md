@@ -128,7 +128,7 @@ This pairing suggestion aims to discourage car dealerships from exercising great
 
 Note: The ‘View()’ function is written into the console as part of sanity check process throughout the Data Appendix instead of embedding into R Script. Thus, the ‘View()’ function shall not be discussed below.
 
-1.	The coding within R script begins by setting working directory using ‘setwd()’ function.
+The coding within R script begins by setting working directory using ‘setwd()’ function.
 
 ```r
 # Set working directory in R
@@ -136,9 +136,9 @@ Note: The ‘View()’ function is written into the console as part of sanity ch
 setwd("C:/Users/keith/OneDrive - SUSS University/Modules/Y1S1 - ANL501/1. TMA/ANL501_TMA01_N2510329_Liew_Kai_Kiat")
 ```
 
-2.	Loaded the ‘readxl’ package using ‘library()’ function,
-a.	The ‘read_excel’ function was used to read TMA Excel file;
-b.	Data object was assigned to all five data frames for ease of identification.
+Loaded the ‘readxl’ package using ‘library()’ function:
+- The ‘read_excel’ function was used to read TMA Excel file;
+- Data object was assigned to all five data frames for ease of identification.
 
 ``` r
 # Import TMA dataset into R
@@ -161,9 +161,9 @@ INTEREST_data <- read_excel("ANL501_JAN25_TMA_data.xlsx",
                             sheet = "INTEREST")
 ```
 
-3.	Exploring data frames
-a.	Loaded ‘tidyverse’ package using ‘library()’ function;
-b.	Used ‘glimpse()’ function to have an overview visuals of the data structure.
+Exploring data frames
+- Loaded ‘tidyverse’ package using ‘library()’ function;
+- Used ‘glimpse()’ function to have an overview visuals of the data structure.
 
 ``` r
 # Explore all data frames
@@ -177,11 +177,11 @@ glimpse(CPI_data) # Observations are in "chr" class, to change to "num"
 glimpse(INTEREST_data) # Observations are in "chr" class, to change to "num"
 ```
 
-4.	Cleaning data frames
-a.	Used the ‘mutate()’, ‘across()’ and ‘as.numeric’ functions to change all observations from “chr” to "num" class barring first column with ‘-1’ argument for consistency;
-b.	For IP, CPI and INTEREST datasets, noted there were inconsistent decimal points presented. Thus, the expression ‘mutate(across(-1, ~ ifelse(is.na(.), NA, round(., 2))))’ was used to round all observations to two decimal places (i.e. 2 d.p) for data consistency barring first column with ‘-1’ argument. In addition, ‘~’ was included to create an anonymous function, coupled with ‘.’ that denotes all columns to be processed. The ‘if.na’ expression is used to preserve all "NA" values to maintain data completeness;
-c.	Did a check by using ‘str()’ function to ensure cleaning was applied correctly to all observations;
-d.	Note: "NA" values are not removed at this juncture to ensure completeness of the cleaned data for subsequent wrangling/plotting.
+Cleaning data frames
+- Used the ‘mutate()’, ‘across()’ and ‘as.numeric’ functions to change all observations from “chr” to "num" class barring first column with ‘-1’ argument for consistency;
+- For IP, CPI and INTEREST datasets, noted there were inconsistent decimal points presented. Thus, the expression ‘mutate(across(-1, ~ ifelse(is.na(.), NA, round(., 2))))’ was used to round all observations to two decimal places (i.e. 2 d.p) for data consistency barring first column with ‘-1’ argument. In addition, ‘~’ was included to create an anonymous function, coupled with ‘.’ that denotes all columns to be processed. The ‘if.na’ expression is used to preserve all "NA" values to maintain data completeness;
+- Did a check by using ‘str()’ function to ensure cleaning was applied correctly to all observations;
+- Note: "NA" values are not removed at this juncture to ensure completeness of the cleaned data for subsequent wrangling/plotting.
 
 ``` r
 # Cleaning data frames (Converting from "chr" to "num" class for data consistency.)
@@ -213,9 +213,9 @@ INTEREST_data <- INTEREST_data %>%
 str(INTEREST_data)
 ```
 
-5.	Pivoting data frames
-a.	The ‘pivot_longer()’ and ‘pivot_wider()’ functions were used to convert columns into rows and vice versa whole retaining the same object naming across all data frames for ease of identification;
-b.	The “Period” name was added after applying ‘pivot_longer()’ to denote date observations within.
+Pivoting data frames
+- The ‘pivot_longer()’ and ‘pivot_wider()’ functions were used to convert columns into rows and vice versa whole retaining the same object naming across all data frames for ease of identification;
+- The “Period” name was added after applying ‘pivot_longer()’ to denote date observations within.
 
 ``` r
 # Pivoting data frames
@@ -236,10 +236,10 @@ INTEREST_data <- pivot_longer(data = INTEREST_data, cols = 2:443, names_to = "Pe
 INTEREST_data <- pivot_wider(data = INTEREST_data, names_from = 'Data Series', values_from = value)
 ```
 
-6.	Convert “Period” column into “Date” format
-a.	Loaded ‘lubridate’ package using ‘library()’ function;
-b.	Used the ‘as.Date()’ function to convert “chr” into “date” class. As the string only provides the year and month (i.e. YYYY MMM) format, the function ‘paste0()’ was passed to help append the string “01” before a smooth conversion into “date” class can be done;
-c.	The format of the date format is “%Y %b %d” (i.e. YYYY MM DD).
+Convert “Period” column into “Date” format
+- Loaded ‘lubridate’ package using ‘library()’ function;
+- Used the ‘as.Date()’ function to convert “chr” into “date” class. As the string only provides the year and month (i.e. YYYY MMM) format, the function ‘paste0()’ was passed to help append the string “01” before a smooth conversion into “date” class can be done;
+- The format of the date format is “%Y %b %d” (i.e. YYYY MM DD).
 
 ``` r
 # Convert “Period” column into “Date” format
@@ -262,11 +262,11 @@ INTEREST_data <- INTEREST_data %>%
   mutate(Period = as.Date(paste0(Period, "01"), format = "%Y %b %d"))
 ```
 
-7.	Data manipulation in data frames
-a.	Loaded ‘dplyr’ package using ‘library()’ function;
-b.	For COE_data – ‘mutate()’ function was used to create new columns to combine total “Quota”, “Bids” and “Successful Bids” as there are two open biddings that makes up total supply/demand in a given month. The ‘rowSums()’ function was passed to sum up observations from two open bidding process for an accurate analysis/plotting subsequently. The ‘na.rm = TRUE’ was also included as an additional argument to ignore “NA” observations when performing a sum between two defined observations. New columns were added with the suffix “Quota”, “Bids”, “Successful Bids” by their respective categories. It is also important to note that the ‘rowMeans()’ function was used to compute COE premium instead of ‘rowSums()’ as that variable is presented in “dollar” format and summing it will result in an inflated COE premium in the subsequent analysis/plotting;
-c.	For CARS_data – Noted there was a duplicate value based on the earlier data structure check through ‘glimpse()’. Thus, “NA” was assigned to the duplicate datapoint (i.e. On 1988 December, data for ‘Public Motor Cars’ was split into ‘Public Motor Cars’ and ‘Private Hire Cars’. However, observation for ‘Public Motor Cars’ still existed). In addition, a new column was appended using ‘mutate()’ and ‘rowSums()’ function to sum `Public Motor Cars`, `Taxis`, `Buses`, `Motorcycles & Scooters` and `Goods & Other Vehicles` variables as a form of aggregation. This was done as the focus of analysis/plotting was ultimately between cars and PHVs. The ‘Total’ column was also renamed as ‘Total Vehicles’ for ease of identification using the ‘rename()’ function. A sanity check was done via this code ‘CARS_data$`Public Motor Cars`[431]’ to ensure the specific observation was removed;
-d.	For CPI_data and IP_data, the ‘rename()’ function was also used to rename ‘All Items” and “Total” variables respectively for ease of identification.
+Data manipulation in data frames
+- Loaded ‘dplyr’ package using ‘library()’ function;
+- For COE_data – ‘mutate()’ function was used to create new columns to combine total “Quota”, “Bids” and “Successful Bids” as there are two open biddings that makes up total supply/demand in a given month. The ‘rowSums()’ function was passed to sum up observations from two open bidding process for an accurate analysis/plotting subsequently. The ‘na.rm = TRUE’ was also included as an additional argument to ignore “NA” observations when performing a sum between two defined observations. New columns were added with the suffix “Quota”, “Bids”, “Successful Bids” by their respective categories. It is also important to note that the ‘rowMeans()’ function was used to compute COE premium instead of ‘rowSums()’ as that variable is presented in “dollar” format and summing it will result in an inflated COE premium in the subsequent analysis/plotting;
+- For CARS_data – Noted there was a duplicate value based on the earlier data structure check through ‘glimpse()’. Thus, “NA” was assigned to the duplicate datapoint (i.e. On 1988 December, data for ‘Public Motor Cars’ was split into ‘Public Motor Cars’ and ‘Private Hire Cars’. However, observation for ‘Public Motor Cars’ still existed). In addition, a new column was appended using ‘mutate()’ and ‘rowSums()’ function to sum `Public Motor Cars`, `Taxis`, `Buses`, `Motorcycles & Scooters` and `Goods & Other Vehicles` variables as a form of aggregation. This was done as the focus of analysis/plotting was ultimately between cars and PHVs. The ‘Total’ column was also renamed as ‘Total Vehicles’ for ease of identification using the ‘rename()’ function. A sanity check was done via this code ‘CARS_data$`Public Motor Cars`[431]’ to ensure the specific observation was removed;
+- For CPI_data and IP_data, the ‘rename()’ function was also used to rename ‘All Items” and “Total” variables respectively for ease of identification.
 
 ``` r
 # Data manipulation in data frames
@@ -363,9 +363,7 @@ COE_data <- COE_data %>%
                                         `Open Category, Quota Premium, 2nd Bidding (Dollar)`), 
                                  na.rm = TRUE))
 
-
 # Removing a duplicate value from "CARS_data"
-
 CARS_data$`Public Motor Cars`[431] <- NA
 CARS_data$`Public Motor Cars`[431] # Sanity check.
 
@@ -389,12 +387,12 @@ IP_data <- IP_data %>%
   rename('Total IP' = Total) # Renaming column for ease of identification.
 ```
 
-8.	Import additional data frame from data.gov.sg
-a.	Downloaded ‘GDP per capita’ dataset from data.gov.sg to support subsequent argument in the form of Singapore’s GDP per capita. Embedded [link](https://data.gov.sg/datasets/d_dce7d88c668273bb8c1291027e63325a/view) for reference. The appended csv file can also be found under “Data Attachments” section below;
-b.	The ‘read_csv()’ function was used as the downloaded file is stored in csv format;
-c.	The ‘pivot_longer()’ and ‘pivot_wider()’ functions were used to convert columns into rows and vice versa whole retaining the same object naming across all data frames for ease of identification;
-d.	Converted “Period” column using ‘as.Date()’ function and added ‘paste0()’ and ‘-01-01’ arguments to convert it from “chr” to “date”;
-e.	Removing unnecessary columns by assigning ‘NULL’ into relevant columns in dataset.
+Import additional data frame from data.gov.sg
+- Downloaded ‘GDP per capita’ dataset from data.gov.sg to support subsequent argument in the form of Singapore’s GDP per capita. Embedded [link](https://data.gov.sg/datasets/d_dce7d88c668273bb8c1291027e63325a/view) for reference. The appended csv file can also be found under “Data Attachments” section below;
+- The ‘read_csv()’ function was used as the downloaded file is stored in csv format;
+- The ‘pivot_longer()’ and ‘pivot_wider()’ functions were used to convert columns into rows and vice versa whole retaining the same object naming across all data frames for ease of identification;
+- Converted “Period” column using ‘as.Date()’ function and added ‘paste0()’ and ‘-01-01’ arguments to convert it from “chr” to “date”;
+- Removing unnecessary columns by assigning ‘NULL’ into relevant columns in dataset.
 
 ``` r
 # Import additional data frame from data.gov.sg
@@ -414,12 +412,11 @@ str(GDP_data) # Sanity Check.
 
 # Removing unnecessary columns
 
-``` r
-# GDP_data$`Per Capita GNI (US Dollar)` <- NULL
-# GDP_data$`Per Capita GNI` <- NULL
+GDP_data$`Per Capita GNI (US Dollar)` <- NULL
+GDP_data$`Per Capita GNI` <- NULL
 ```
 
-9.	Final sanity check of all data frames post cleaning and manipulation through a combination of functions such as ‘head()’, ‘tail()’, ‘colnames()’ and ‘glimpse()’.
+Final sanity check of all data frames post cleaning and manipulation through a combination of functions such as ‘head()’, ‘tail()’, ‘colnames()’ and ‘glimpse()’.
 
 ``` r
 # Final sanity check of all data frames post cleaning and manipulation
@@ -457,7 +454,7 @@ glimpse(GDP_data)
 
 ## Commencement of Data Visualisation using ‘ggplot’ function
 
-10.	Loaded various packages (i.e. ‘socviz’, ‘directlabels’, ‘gapminder’, ‘scales’ and ‘zoo’) using ‘library()’ function.
+Loaded various packages (i.e. ‘socviz’, ‘directlabels’, ‘gapminder’, ‘scales’ and ‘zoo’) using ‘library()’ function.
 
 ```r
 # Install and load packages for plotting
@@ -472,18 +469,18 @@ install.packages("zoo")
 library(zoo)
 ```
 
-11.	Figure 1 : COE premiums over time using line chart 
-a.	First, ‘Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
-b.	Next, the 'na.approx' function was used to interpolate missing values;
-c.	Plotting code starts with ‘ggplot()’ where the x,y and group arguments were passed globally, setting the axis of the line plot; 
-d.	The color aesthetics was then passed into ‘geom_line()’;
-e.	‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
-f.	The ‘geom_rect()’ function was added twice to mark out timelines where  two significant events took place (i.e. global financial crisis and COVID-19 pandemic);
-g.	The ‘scale_y_continuous()’ function was used to convert y-axis labelling to “dollar” format, with ‘breaks = seq(0, 160000, by = 10000)’ defines the parameters of y-axis with an incremental value of $10,000;
-h.	The ‘scale_x_date()’ was used to set the time interval as one year across the x axis, with a ‘%y’ date label converting the date format as “YY” display; 
-i.	The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
-j.	‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
-k.	The completed code was assigned an object for ease of reference.
+Figure 1 : COE premiums over time using line chart 
+- First, ‘Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
+- Next, the 'na.approx' function was used to interpolate missing values;
+- Plotting code starts with ‘ggplot()’ where the x,y and group arguments were passed globally, setting the axis of the line plot; 
+- The color aesthetics was then passed into ‘geom_line()’;
+- ‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
+- The ‘geom_rect()’ function was added twice to mark out timelines where  two significant events took place (i.e. global financial crisis and COVID-19 pandemic);
+- The ‘scale_y_continuous()’ function was used to convert y-axis labelling to “dollar” format, with ‘breaks = seq(0, 160000, by = 10000)’ defines the parameters of y-axis with an incremental value of $10,000;
+- The ‘scale_x_date()’ was used to set the time interval as one year across the x axis, with a ‘%y’ date label converting the date format as “YY” display; 
+- The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
+- ‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
+- The completed code was assigned an object for ease of reference.
 
 ``` r
 # Pivoting
@@ -527,17 +524,17 @@ COE.Premium.Plot.1 <- filter(COE_Mutate, `Data Series` %in% c("Category A (S$)",
   theme_classic()
 ```
 
-12.	Figure 2 : Demand and supply for vehicles using line chart
-a.	First, the ‘filter()’ function, coupled with the ‘%in%’ operator were used to sieve out specific columns required for chart plotting;
-b.	Next, ‘ggplot()’ was used where the aesthetics of x,y and group arguments were passed globally, setting the axis of the line plot; 
-c.	The color aesthetics was then passed into ‘geom_smooth()’ to smoothen out fluctuating data points, converting it into a smoother line for better visualisation;
-d.	‘labs()’ function was added to indicate axis title, chart title, sub-title and caption;
-e.	The ‘scale_y_continuous()’ function was used to set commas into y-axis labelling format;
-f.	The ‘scale_x_date()’ was used to set the time interval as one year across the x axis, with a ‘%y’ date label converting the date format as “YY” display; 
-g.	The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
-h.	‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
-i.	The completed code was assigned an object for ease of reference;
-j.	‘geon_dl()’, along with the ‘smart.grid’ argument was passed inside the code to have a dynamic legend instead of a static one.
+Figure 2 : Demand and supply for vehicles using line chart
+- First, the ‘filter()’ function, coupled with the ‘%in%’ operator were used to sieve out specific columns required for chart plotting;
+- Next, ‘ggplot()’ was used where the aesthetics of x,y and group arguments were passed globally, setting the axis of the line plot; 
+- The color aesthetics was then passed into ‘geom_smooth()’ to smoothen out fluctuating data points, converting it into a smoother line for better visualisation;
+- ‘labs()’ function was added to indicate axis title, chart title, sub-title and caption;
+- The ‘scale_y_continuous()’ function was used to set commas into y-axis labelling format;
+- The ‘scale_x_date()’ was used to set the time interval as one year across the x axis, with a ‘%y’ date label converting the date format as “YY” display; 
+- The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
+- ‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
+- The completed code was assigned an object for ease of reference;
+- ‘geon_dl()’, along with the ‘smart.grid’ argument was passed inside the code to have a dynamic legend instead of a static one.
 
 ```r
 # Plotting line chart
@@ -563,16 +560,16 @@ COE.Quota.Bids.Plot.1 + geom_dl(aes(label= `Data Series`, color = `Data Series`)
   guides(color = "none")
 ```
 
-13.	Figure 3a/3b/3c : Relationship between Category A Quota and Category A COE Premium using a point chart
-a.	‘ggplot()’ and ‘mapping’ were used to pass aesthetics of x and y arguments globally, setting the axis of the plot;
-b.	‘geom_point()’ denotes that the outcome of comparing x and y variables to be a scatter plot, with the colour scheme and tone set within; 
-c.	‘geom_smooth()’ was added to find out the correlation between x and y variables, with ‘method = “lm”’ set to linear model and ‘se = F’ means not displaying confidence interval;
-d.	‘labs()’ function was added to indicate axis title, chart title, sub-title and caption;
-e.	The ‘scale_y_continuous()’ function was used to set dollars into y-axis labelling format;
-f.	The ‘scale_x_continuous()’ was used to set comma within the number format in x axis for neater display; 
-g.	The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
-h.	‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
-i.	The completed code was assigned an object for ease of reference.
+Figure 3a/3b/3c : Relationship between Category A Quota and Category A COE Premium using a point chart
+- ‘ggplot()’ and ‘mapping’ were used to pass aesthetics of x and y arguments globally, setting the axis of the plot;
+- ‘geom_point()’ denotes that the outcome of comparing x and y variables to be a scatter plot, with the colour scheme and tone set within; 
+- ‘geom_smooth()’ was added to find out the correlation between x and y variables, with ‘method = “lm”’ set to linear model and ‘se = F’ means not displaying confidence interval;
+- ‘labs()’ function was added to indicate axis title, chart title, sub-title and caption;
+- The ‘scale_y_continuous()’ function was used to set dollars into y-axis labelling format;
+- The ‘scale_x_continuous()’ was used to set comma within the number format in x axis for neater display; 
+- The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
+- ‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
+- The completed code was assigned an object for ease of reference.
 
 ``` r
 # Plotting point chart
@@ -594,18 +591,18 @@ RS.1 <- ggplot(data = COE_data, mapping = aes(x = `Category A Quota`, y = `Categ
 # Similar r code was used to generate Figures 3b and 3c.
 ```
 
-14.	Figure 4 : Industrial production indexes using line chart
-a.	First, ‘Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
-b.	Next, the 'na.approx' function was used to interpolate missing values;
-c.	The ‘filter()’, ‘%in%’ and ‘as.Date()’ functions were passed into the plot to filter out specific variables and timelines within a dataset;
-d.	Plotting code starts with ‘ggplot()’ where the the aesthetics of x,y and group arguments were passed globally, setting the axis of the line plot; 
-e.	The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
-f.	‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
-g.	The ‘scale_y_continuous()’ function was used to set breaks between each value increment by 50 points (while removing “NA” via ‘na.rm()’ function) and format the display of numbers to two decimal places;
-h.	The ‘scale_x_date()’ was used to set the time interval of two years across the x axis, with a ‘%y’ date label converting the date format as “YY” display; 
-i.	The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
-j.	‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
-k.	The completed code was assigned an object for ease of reference.
+Figure 4 : Industrial production indexes using line chart
+- First, ‘Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
+- Next, the 'na.approx' function was used to interpolate missing values;
+- The ‘filter()’, ‘%in%’ and ‘as.Date()’ functions were passed into the plot to filter out specific variables and timelines within a dataset;
+- Plotting code starts with ‘ggplot()’ where the the aesthetics of x,y and group arguments were passed globally, setting the axis of the line plot; 
+- The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
+- ‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
+- The ‘scale_y_continuous()’ function was used to set breaks between each value increment by 50 points (while removing “NA” via ‘na.rm()’ function) and format the display of numbers to two decimal places;
+- The ‘scale_x_date()’ was used to set the time interval of two years across the x axis, with a ‘%y’ date label converting the date format as “YY” display; 
+- The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
+- ‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
+- The completed code was assigned an object for ease of reference.
 
 ``` r
 # Pivoting
@@ -642,18 +639,18 @@ k.	The completed code was assigned an object for ease of reference.
     theme_classic()
 ```
 
-15.	Figure 5 : CPI indexes using line chart
-a.	First, ‘Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
-b.	Next, the 'na.approx' function was used to interpolate missing values;
-c.	The ‘filter()’, ‘%in%’ and ‘as.Date()’ functions were passed into the plot to filter out specific variables and timelines within a dataset;
-d.	Plotting code starts with ‘ggplot()’ where the the aesthetics of x,y and group arguments were passed globally, setting the axis of the line plot; 
-e.	The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
-f.	‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
-g.	The ‘scale_y_continuous()’ function was used to set breaks between each value increment by 10 points (while removing “NA” via ‘na.rm()’ function) and format the display of numbers to two decimal places;
-h.	The ‘scale_x_date()’ was used to set the time interval of two years across the x axis, with a ‘%Y’ date label converting the date format as “YYYY” display; 
-i.	The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
-j.	‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
-k.	The completed code was assigned an object for ease of reference.
+Figure 5 : CPI indexes using line chart
+- First, ‘Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
+- Next, the 'na.approx' function was used to interpolate missing values;
+- The ‘filter()’, ‘%in%’ and ‘as.Date()’ functions were passed into the plot to filter out specific variables and timelines within a dataset;
+- Plotting code starts with ‘ggplot()’ where the the aesthetics of x,y and group arguments were passed globally, setting the axis of the line plot; 
+- The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
+- ‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
+- The ‘scale_y_continuous()’ function was used to set breaks between each value increment by 10 points (while removing “NA” via ‘na.rm()’ function) and format the display of numbers to two decimal places;
+- The ‘scale_x_date()’ was used to set the time interval of two years across the x axis, with a ‘%Y’ date label converting the date format as “YYYY” display; 
+- The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
+- ‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
+- The completed code was assigned an object for ease of reference.
 
 ``` r
 # Filter for specific columns for visualisation
@@ -689,20 +686,20 @@ CPI.plot.1 <- filter(CPI_Category, `Data Series` %in% c("All Items CPI", "Food",
   theme_classic()
 ```
 
-16.	Figure 6 : Singapore's GDP per capita using line chart
-a.	The GDP per capita growth rate was first computed using R’s mathematical operator ‘*’, ‘-‘ and ‘/’;
-b.	Next, Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
-c.	Next, the 'na.approx' function was used to interpolate missing values;
-d.	The ‘filter()’, %in%’ was passed to extract relevant columns for plotting while ‘as.Date()’ function was passed into the plot to filter out specific timelines within a dataset;
-e.	Plotting code starts with ‘ggplot()’ where the the aesthetics of x,y and group arguments were passed globally, setting the axis of the line plot; 
-f.	The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
-g.	‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
-h.	The ‘scale_y_continuous()’ function was used to set dollar into y-axis labelling format;
-i.	The ‘scale_x_date()’ was used to set the time interval of two years across the x axis, with a ‘%Y’ date label converting the date format as “YYYY” display; 
-j.	The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
-k.	‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
-l.	The completed code was assigned an object for ease of reference;
-m.	‘geon_dl()’, along with the ‘smart.grid’ argument was passed inside the code to have a dynamic legend instead of a static one.
+Figure 6 : Singapore's GDP per capita using line chart
+- The GDP per capita growth rate was first computed using R’s mathematical operator ‘*’, ‘-‘ and ‘/’;
+- Next, Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
+- Next, the 'na.approx' function was used to interpolate missing values;
+- The ‘filter()’, %in%’ was passed to extract relevant columns for plotting while ‘as.Date()’ function was passed into the plot to filter out specific timelines within a dataset;
+- Plotting code starts with ‘ggplot()’ where the the aesthetics of x,y and group arguments were passed globally, setting the axis of the line plot; 
+- The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
+- ‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
+- The ‘scale_y_continuous()’ function was used to set dollar into y-axis labelling format;
+- The ‘scale_x_date()’ was used to set the time interval of two years across the x axis, with a ‘%Y’ date label converting the date format as “YYYY” display; 
+- The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
+- ‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
+- The completed code was assigned an object for ease of reference;
+- ‘geon_dl()’, along with the ‘smart.grid’ argument was passed inside the code to have a dynamic legend instead of a static one.
 
 ``` r
 # Compute GDP per capita growth between 2002 and 2024
@@ -746,20 +743,20 @@ GDP.plot.1 + geom_dl(aes(label= `Data Series`, color = `Data Series`),
   guides(color = "none")
 ```
 
-17.	Figure 7 : Combination of IP and CPI indexes using line chart
-a.	‘left_join()’ function was used, with CPI_data set as the dataset for left join to extract specific columns and append it into IP_data, with ‘select()’ used to extract relevant variables out for plotting;
-b.	An object was given to name this combined dataset;
-c.	Next, Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
-d.	Next, the 'na.approx' function was used to interpolate missing values;
-e.	The ‘filter()’, %in%’ was passed to extract relevant columns for plotting while ‘as.Date()’ function was passed into the plot to filter out specific timelines within a dataset;
-f.	Plotting code starts with ‘ggplot()’ where the the aesthetics of x,y and group arguments were passed globally, setting the axis of the line plot; 
-g.	The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
-h.	‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
-i.	The ‘scale_y_continuous()’ function was used and breaks were set between each value increment by 10 points (while removing “NA” via ‘na.rm()’ function) and format the display of numbers to two decimal places;
-j.	The ‘scale_x_date()’ was used to set the time interval of two years across the x axis, with a ‘%y’ date label converting the date format as “YY” display; 
-k.	The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
-l.	‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
-m.	The completed code was assigned an object for ease of reference.
+Figure 7 : Combination of IP and CPI indexes using line chart
+- ‘left_join()’ function was used, with CPI_data set as the dataset for left join to extract specific columns and append it into IP_data, with ‘select()’ used to extract relevant variables out for plotting;
+- An object was given to name this combined dataset;
+- Next, Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
+- Next, the 'na.approx' function was used to interpolate missing values;
+- The ‘filter()’, %in%’ was passed to extract relevant columns for plotting while ‘as.Date()’ function was passed into the plot to filter out specific timelines within a dataset;
+- Plotting code starts with ‘ggplot()’ where the the aesthetics of x,y and group arguments were passed globally, setting the axis of the line plot; 
+- The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
+- ‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
+- The ‘scale_y_continuous()’ function was used and breaks were set between each value increment by 10 points (while removing “NA” via ‘na.rm()’ function) and format the display of numbers to two decimal places;
+- The ‘scale_x_date()’ was used to set the time interval of two years across the x axis, with a ‘%y’ date label converting the date format as “YY” display; 
+- The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
+- ‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
+- The completed code was assigned an object for ease of reference.
 
 ``` r
 # Left join both IP and CPI data frames and filter relevant columns
@@ -801,18 +798,18 @@ IPCPI.plot.1 <- filter(IPCPI_Cbind, `Data Series` %in% c("Motor Vehicles, Traile
   theme_classic()
 ```
 
-18.	Figure 8 : Interest rates using line chart
-a.	Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
-b.	Next, the 'na.approx' function was used to interpolate missing values;
-c.	The ‘filter()’, %in%’ was passed to extract relevant columns for plotting while ‘as.Date()’ function was passed into the plot to filter out specific timelines within a dataset;
-d.	Used ‘ggplot()’ where the x,y and group arguments were passed globally, setting the axis of the line plot; 
-e.	The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
-f.	‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
-g.	The ‘scale_y_continuous()’ function was used to set comma into y-axis labelling format, display axis in two decimal places;
-h.	The ‘scale_x_date()’ was used to set the time interval of two years across the x axis, with a ‘%y’ date label converting the date format as “YY” display; 
-i.	The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
-j.	‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
-k.	The completed code was assigned an object for ease of reference;
+Figure 8 : Interest rates using line chart
+- Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
+- Next, the 'na.approx' function was used to interpolate missing values;
+- The ‘filter()’, %in%’ was passed to extract relevant columns for plotting while ‘as.Date()’ function was passed into the plot to filter out specific timelines within a dataset;
+- Used ‘ggplot()’ where the x,y and group arguments were passed globally, setting the axis of the line plot; 
+- The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
+- ‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
+- The ‘scale_y_continuous()’ function was used to set comma into y-axis labelling format, display axis in two decimal places;
+- The ‘scale_x_date()’ was used to set the time interval of two years across the x axis, with a ‘%y’ date label converting the date format as “YY” display; 
+- The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
+- ‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
+- The completed code was assigned an object for ease of reference;
 
 ``` r
 # Filter for specific columns for visualisation
@@ -846,21 +843,21 @@ INTEREST.plot.1 <- filter(INTEREST_Category, `Data Series` %in% c("Government Se
   theme_classic()
 ```
 
-19.	Figure 9 : Vehicle population by category using line chart
-a.	The growth rate for both car and private hire cars were first computed using R’s mathematical operators ‘*’, ‘-‘ and ‘/’;
-b.	Next, Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
-c.	Next, the 'na.approx' function was used to interpolate missing values;
-d.	The ‘filter()’, %in%’ was passed to extract relevant columns for plotting while ‘as.Date()’ function was passed into the plot to filter out specific timelines within a dataset;
-e.	‘ggplot()’ was used where the x,y and group arguments were passed globally, setting the axis of the line plot; 
-f.	The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
-g.	‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
-h.	The ‘geom_rect()’ function was added to mark out the boom of PHVs in the market;
-i.	The ‘scale_y_continuous()’ function was used to set comma into y-axis labelling format;
-j.	The ‘scale_x_date()’ was used to set the time interval of four years across the x axis, with a ‘%Y’ date label converting the date format as “YYYY” display; 
-k.	The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
-l.	‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
-m.	The completed code was assigned an object for ease of reference;
-n.	‘geon_dl()’, along with the ‘smart.grid’ argument was passed inside the code to have a dynamic legend instead of a static one.
+Figure 9 : Vehicle population by category using line chart
+- The growth rate for both car and private hire cars were first computed using R’s mathematical operators ‘*’, ‘-‘ and ‘/’;
+- Next, Pivot_longer()’ is performed to transform data into a long format for subsequent plotting while assigning it as an object for ease of identification;
+- Next, the 'na.approx' function was used to interpolate missing values;
+- The ‘filter()’, %in%’ was passed to extract relevant columns for plotting while ‘as.Date()’ function was passed into the plot to filter out specific timelines within a dataset;
+- ‘ggplot()’ was used where the x,y and group arguments were passed globally, setting the axis of the line plot; 
+- The color aesthetics was then passed into ‘geom_smooth()’, with ‘method = “loess”’ passed to specify method for smoothing, size was set using ‘size’;
+- ‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
+- The ‘geom_rect()’ function was added to mark out the boom of PHVs in the market;
+- The ‘scale_y_continuous()’ function was used to set comma into y-axis labelling format;
+- The ‘scale_x_date()’ was used to set the time interval of four years across the x axis, with a ‘%Y’ date label converting the date format as “YYYY” display; 
+- The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
+- ‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
+- The completed code was assigned an object for ease of reference;
+- ‘geon_dl()’, along with the ‘smart.grid’ argument was passed inside the code to have a dynamic legend instead of a static one.
 
 ``` r
 # Computing vehicle growth rate and mean for Cars and PHV categories
@@ -913,20 +910,20 @@ CARS.plot.1 + geom_dl(aes(label= `Data Series`, color = `Data Series`),
   guides(color = "none")
 ```
 
-20.	Figure 10 : Comparing population between cars and PHV uding bar chart
-a.	The ‘filter()’ and ‘as.Date()’ function were passed into the plot to filter out specific timelines within a dataset;
-b.	The ‘aggregate()’ function was used to aggregate the “Value” column using ‘mean()’ to determine its average;
-c.	‘subset()’ was used to filter specific columns for plotting;
-d.	‘ggplot()’ was used where the x,y and group arguments were passed globally, setting the axis of the line plot; 
-e.	The color aesthetics was then passed into ‘geom_bar()’, with ‘position_dodge’ argument passed for better side-by-side comparison;
-f.	‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
-g.	The ‘geom_rect()’ function was added to mark out the boom of PHVs in the market;
-h.	The ‘scale_y_continuous()’ function was used to set comma into y-axis labelling format and breaks were set between each value increment by 50,000;
-i.	The ‘scale_x_date()’ was used to set the time interval of four years across the x axis, with a ‘%Y’ date label converting the date format as “YYYY” display; 
-j.	The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
-k.	‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
-l.	The completed code was assigned an object for ease of reference;
-m.	‘geon_dl()’, along with the ‘smart.grid’ argument was passed inside the code to have a dynamic legend instead of a static one.
+Figure 10 : Comparing population between cars and PHV uding bar chart
+- The ‘filter()’ and ‘as.Date()’ function were passed into the plot to filter out specific timelines within a dataset;
+- The ‘aggregate()’ function was used to aggregate the “Value” column using ‘mean()’ to determine its average;
+- ‘subset()’ was used to filter specific columns for plotting;
+- ‘ggplot()’ was used where the x,y and group arguments were passed globally, setting the axis of the line plot; 
+- The color aesthetics was then passed into ‘geom_bar()’, with ‘position_dodge’ argument passed for better side-by-side comparison;
+- ‘labs()’ function was added to indicate axis title,  chart title, sub-title and caption;
+- The ‘geom_rect()’ function was added to mark out the boom of PHVs in the market;
+- The ‘scale_y_continuous()’ function was used to set comma into y-axis labelling format and breaks were set between each value increment by 50,000;
+- The ‘scale_x_date()’ was used to set the time interval of four years across the x axis, with a ‘%Y’ date label converting the date format as “YYYY” display; 
+- The ‘theme()’ and ‘element_text()’ functions were used to set the size and format of texts within the chart;
+- ‘theme_classic()’ was used to remove gridlines in the background, giving it a cleaner, uncluttered look and feel;
+- The completed code was assigned an object for ease of reference;
+- ‘geon_dl()’, along with the ‘smart.grid’ argument was passed inside the code to have a dynamic legend instead of a static one.
 
 ``` r
 # Creating filtering conditions
