@@ -23,8 +23,6 @@ order: 4
 
 📚 Currently learning R Programming
 
-📫 Reach me via **[keithliewkaikiat@gmail.com](keithliewkaikiat@gmail.com)** or **[kkliew002@suss.edu.sg](kkliew002@suss.edu.sg)**
-
 ### **Fun Facts:**
 
 🏃🏻‍♂️ To one day participate in at least one Abbott World Marathon Majors
