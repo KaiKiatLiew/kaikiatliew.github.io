@@ -2,6 +2,7 @@
 title: High COE Prices - Are PHVs the Real Culprit?
 date: 2025-03-16
 categories: [Portfolio]
+image: "/Post/SGCars.jpg"
 tags: [R, Data Visualisation, Data Wrangling]
 ---
 
