@@ -953,5 +953,3 @@ Avg.Cars.Pop.Plot.1 <- ggplot(CARS_Filtered_Agg_Data, aes(x = `Data Series`, y =
   theme_classic() +
   theme(legend.position = "none")
 ```
-
-
