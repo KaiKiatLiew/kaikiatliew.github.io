@@ -391,7 +391,7 @@ IP_data <- IP_data %>%
 ```
 
 8.	Import additional data frame from data.gov.sg
-a.	Downloaded ‘GDP per capita’ dataset from data.gov.sg to support subsequent argument in the form of Singapore’s GDP per capita. Embedded <link> for reference. The appended csv file can also be found under “Data Attachments” section below;
+a.	Downloaded ‘GDP per capita’ dataset from data.gov.sg to support subsequent argument in the form of Singapore’s GDP per capita. Embedded [link](https://data.gov.sg/datasets/d_dce7d88c668273bb8c1291027e63325a/view) for reference. The appended csv file can also be found under “Data Attachments” section below;
 b.	The ‘read_csv()’ function was used as the downloaded file is stored in csv format;
 c.	The ‘pivot_longer()’ and ‘pivot_wider()’ functions were used to convert columns into rows and vice versa whole retaining the same object naming across all data frames for ease of identification;
 d.	Converted “Period” column using ‘as.Date()’ function and added ‘paste0()’ and ‘-01-01’ arguments to convert it from “chr” to “date”;
