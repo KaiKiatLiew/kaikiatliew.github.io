@@ -414,7 +414,7 @@ GDP_data$Period <- as.Date(paste0(GDP_data$Period, "-01-01"))
 str(GDP_data) # Sanity Check.
 
 # Removing unnecessary columns
-
+``` r
 GDP_data$`Per Capita GNI (US Dollar)` <- NULL
 GDP_data$`Per Capita GNI` <- NULL
 ```
