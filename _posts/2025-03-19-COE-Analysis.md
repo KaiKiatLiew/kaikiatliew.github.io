@@ -416,8 +416,8 @@ str(GDP_data) # Sanity Check.
 # Removing unnecessary columns
 
 ``` r
-GDP_data$`Per Capita GNI (US Dollar)` <- NULL
-GDP_data$`Per Capita GNI` <- NULL
+# GDP_data$`Per Capita GNI (US Dollar)` <- NULL
+# GDP_data$`Per Capita GNI` <- NULL
 ```
 
 9.	Final sanity check of all data frames post cleaning and manipulation through a combination of functions such as ‘head()’, ‘tail()’, ‘colnames()’ and ‘glimpse()’.
