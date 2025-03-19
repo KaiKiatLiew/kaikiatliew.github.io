@@ -30,7 +30,7 @@ Following public dissatisfaction and outcries for change, an internal review was
 Over the years, several refinements have been made to improve VQS, including enhanced transparency to bidding process, revised off-peak car scheme, implementation of a zero-growth policy as well as a streamlined vehicle category for tenders depicted in Table 1.
 
 Table 1: Classifications of Vehicle Categories
-![Table 1](assets/COE/Table_1.png)
+
 *Note. From “History of COE, and how it has evolved since 1990”, by Ho.T, 2023.*
 
 ## 2.0 Data Analysis
@@ -49,15 +49,13 @@ However, the presence of both significant events alone does not provide sufficie
 
 ### 2.2 Supply and Demand for Vehicles in Singapore
 
-![Figure 2](assets/COE/Figure_2.png)
+
 
 As a land-scarce nation, the supply of vehicles on public roads are policy driven where it is Government mandated and administered through VQS. Under VQS, the annual supply of vehicle (quota) is determined based on a rolling average of total deregistered vehicles over the previous four quarters allocated to its respective categories. In other words, batches of vehicles that were due for deregistering in a set year directly affects subsequent fluctuations in supply between January 2002 and January 2018.
 
 To top it off, initial vehicle growth-rate policy was set at 3% per annum (Omar & Rahman, 2019). However, from February 2018, the Ministry of Transport announced that the vehicle growth-rate shall be zero for all categories except Category C at 0.25% in tandem with Singapore’s car-lite policy which aims to shift perception from car ownership to increased use of public transportation. Since the announcement, a downward trend in vehicle supply can be observed, barring periods between April 2020 and June 2020 in view of an elevated safe distancing measure where no open biddings were held to prevent the spread of COVID-19. 
 
-![Figure 3a](assets/COE/Figure_3a.png)
-![Figure 3b](assets/COE/Figure_3b.png)
-![Figure 3c](assets/COE/Figure_3c.png)
+
 
 Figure 3a to Figure 3c depicts similar negative correlations between COE premium and vehicle quota for all three car categories. Therefore, it is conclusive that fluctuations to COE premium can be influenced by the amount supply made available by the Government. This trend is supported by the Government’s announcement to adopt a cut-and-fill approach in bringing forward additional quota to ease demand for Category A and Category B vehicles while retaining its zero-growth policy. As a result, a 35% increase in supply relative to previous quarter is observed, followed by a corresponding sharp decline in COE premium. The abovementioned policy changes and trend observations further highlight the policy driven nature of vehicle supply in Singapore.
 
@@ -65,27 +63,27 @@ Another prominent feature of VQS was the introduction of a bi-monthly open biddi
 
 ### 2.3 Economic Conditions and Individual Wealth
 
-![Figure 4](assets/COE/Figure_4.png)
+
 
 With reference to Figure 4, a fall in production to commodity items such as basic metals and leather products are observed. On the contrary, Singapore has seen a ramp up in production for higher technological areas such as machinery, equipment and IT-related products. In addition, production for transportation equipment also rose, complementing the Government’s initiative to go car-lite through expanding its current public transport infrastructure. 
 
 On a granular level, Singapore has achieved economic diversification, opting for manufacturing value-add towards advanced technologies over commodities. This shift in production preference indicates Singapore’s vision in attaining sustainable economic growth and higher productivity in the long term. It is further supported by the “Total IP” index, where overall production has been increasing steadily despite experiencing two significant events such (i.e. global financial crisis and COVID-19 pandemic), signalling strong economic growth.
 
-![Figure 5](assets/COE/Figure_5.png)
+
 
 Singapore’s rapid economic growth is not without its consequences. Looking at CPI indexes in Figure 5, most necessities have risen over the years, barring communication and clothing. Among the necessities, transport index has recorded the most significant uptick, especially post COVID-19 pandemic. The overall increase to CPI index, as denoted by “All Items CPI”, also proves that general cost of living in Singapore has elevated in view of its rapid economic growth.
 
-![Figure 6](assets/COE/Figure_6.png)
+
 
 However, Singapore’s Gross Domestic Product (GDP) per capita has benefitted from its shift towards an advanced economy through embracing manufacturing value-added output. Between 2002 and 2024, Singaporean’s GDP per capita has amassed an astounding growth rate of 187%. As of 2023, Singapore is ranked fifth in GDP per capita, pulling its weight among other economic powerhouses such as The United States, Germany and Qatar (GDP per capita, by country 2023 | statista), further showcasing Singaporeans growing purchasing power. As a result, Singaporeans income growth can keep pace with rising cost of living for various necessities depicted within CPI chart in Figure 6. 
 
-![Figure 7](assets/COE/Figure_7.png)
+
 
 It is important to note that growing affluence also sparked a shift towards lifestyle choices, leading to improved quality of life. This is evident in Figure 7, where production of motor vehicles and price indexes for both transportation modes have increased in tandem with rising GDP per capita in Figure 6. Despite the Government’s efforts in promoting a car-lite society and zero-growth policy, growth in price index for private transportation outpaced public transportation post COVID-19 pandemic. This indicates Singaporean’s preference in prioritising comfort over practicality should their financial situation permit, which are factors that drive overall demand for cars.
 
 ### 2.4 Catalysts for Demand – Low Interest Rates and Car Dealership Intervention
 
-![Figure 8](assets/COE/Figure_8.png)
+
 
 The maximum loan tenure for the purchase of vehicle is capped at seven years with effect from 27 May 2016, regulated by the Monetary Authority of Singapore (MAS) (Rules for Motor Vehicle Loans 2016). Therefore, the five- and ten-year bond yields shown in Figure 8 are used as proxies to visualise fluctuating interest rates for car loans offered in the market. 
 
@@ -97,13 +95,13 @@ As consumers became receptive over the comfort and mechanics of such packages of
 
 ### 2.5 Growth of PHVs and its Impact on COE Premium
 
-![Figure 9](assets/COE/Figure_9.png)
+
 
 Apart from economic conditions and individuals growing affluence, some have associated the recent rise of COE premiums with the emergence of PHVs. Looking at Figure 9, there seems to be certain degrees of relation. Between 1 January 2014 and 1 February 2018 (right before zero-growth policy), there was a boom in PHV population with an approximate growth rate of 309% observed, directly contrasting with a negative growth rate of 11% for the cars population. 
 
 In addition, COE premium for all car categories fell during the same period (refer to Figure 1). Focusing the lens post COVID-19 pandemic, the sluggish growth rate of private hire cars does not seem to influence COE premium. Rather, fluctuations to recent COE premium can be associated with Government’s zero-growth policy as supply is artificially restricted, coupled with a cut-and-fill approach to vehicle supply in Q4 2023, resulting in a decline to COE premium in the following quarter.
 
-![Figure 10](assets/COE/Figure_10.png)
+
 
 Visualising vehicle population in terms of its average numbers paints a similar narrative. From Figure 10, it is observed that average population of private hire cars (i.e. ~59,420) is approximately ten times lesser than cars (i.e. ~569,224) post emergence of PHVs between January 2014 and October 2024. Therefore, it is unjust to pass the blame of rising COE premiums onto PHVs entirely.
 
