@@ -55,3 +55,5 @@ COE.Premium.Plot.2
 animate(COE.Premium.Plot.2, nframes = 200, fps = 10, width = 800, height = 600, 
         renderer = gifski_renderer("COE_Premium_Animation.gif"))
 ```
+
+{% include comment.html %}
