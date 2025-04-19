@@ -12,7 +12,7 @@ It is widely recognised that car ownership in Singapore is exceptionally expensi
 
 COE prices have remained elevated since the post-pandemic period, with private hire vehicles (PHVs) often blamed for contributing to these increases. This claim appears credible. Historically, private vehicles were seldom used for commercial purposes until the emergence of ride-hailing apps. Additionally, the severe economic impact of the pandemic led many individuals to seek income through the gig economy. The rise in ride-hailing drivers has consequently led to allegations that PHV owners and companies have engaged in aggressive bidding for COEs, and were responsible for driving up COE prices. Recent headlines, such as [“Private-hire companies deny bidding aggressively for COEs and pushing premiums up”](https://www.channelnewsasia.com/singapore/coe-prices-high-bid-private-hire-rental-2817741) and [“Car leasing firms that bid for private hire vehicles are often blamed whenever COE	prices	go	up.	But	are	they	the	drivers	 of	high premiums?”](https://www.facebook.com/TheStraitsTimes/posts/car-leasing-firms-that-bid-for-private-hire-vehicles-are-often-blamed-whenever-c/805807898373039/),	reflect	the ongoing	debate surrounding this issue.
 
-Therefore, we shall investigate if there is evidence to support the claim that high COE prices are driven by demand for PHVs or is there more that meets the eye. R Studio shall be the main programming language used to support the creation of this op-ed (i.e. import, explore, wrangle and visualize) and the dataset provided ["ANL501_JAN25_TMA_data"] is referenced from [Data.gov.sg](https://data.gov.sg/).
+Therefore, we shall investigate if there is evidence to support the claim that high COE prices are driven by demand for PHVs or is there more that meets the eye. R Studio shall be the main programming language used to support the creation of this op-ed (i.e. import, explore, wrangle and visualize) and the dataset is referenced from [Data.gov.sg](https://data.gov.sg/).
 
 ## 1.0 Introduction
 
@@ -953,3 +953,4 @@ Avg.Cars.Pop.Plot.1 <- ggplot(CARS_Filtered_Agg_Data, aes(x = `Data Series`, y =
   theme_classic() +
   theme(legend.position = "none")
 ```
+{% include comment.html %}
