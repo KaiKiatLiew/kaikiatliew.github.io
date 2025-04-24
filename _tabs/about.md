@@ -17,6 +17,8 @@ order: 4
 
 ❇️ Strategic business partner with an analytical mind, guiding business units in achieving organizational goals.
 
+💡 Personal Motto - "Learning is a lifelong endeavor, stay curious!"
+
 ### **Current Pursuits**
 
 📖 Currently pursuing **[Master of Analytics and Visualisation](https://www.suss.edu.sg/programmes/detail/mavi)** at the **[Singapore University of Social Sciences](https://www.suss.edu.sg/)**
@@ -27,8 +29,8 @@ order: 4
 
 🏃🏻‍♂️ To one day participate in at least one Abbott World Marathon Majors
 
-🧑🏻‍✈️ Became a one day pilot with my best buddy as the instructor!😁
+🧑🏻‍✈️ Became a one day pilot with my best buddy as my instructor!😁
 
 ### **Languages and Tools:**
 <a href="https://www.r-project.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/r/r-original.svg" alt="r" width="40" height="40"/></a>
-<a href="https://devicon.dev/" target="_blank"><img src="https://github.com/devicons/devicon/blob/master/icons/markdown/markdown-original.svg" alt="md" width="40" height="40"/></a>
+<a href="https://devicon.dev/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/markdown/markdown-original.svg" alt="md" width="40" height="40"/></a>
