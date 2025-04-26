@@ -14,6 +14,8 @@ COE prices have remained elevated since the post-pandemic period, with private h
 
 Therefore, we shall investigate if there is evidence to support the claim that high COE prices are driven by demand for PHVs or is there more that meets the eye. R Studio shall be the main programming language used to support the creation of this op-ed (i.e. import, explore, wrangle and visualize) and the dataset is referenced from [Data.gov.sg](https://data.gov.sg/).
 
+The R codes were reproduced and documented under Section 4.0 Data Appendix. Thank you for taking your time to read! There is a reaction button and comment box at the end of the article, do feel free to leave a comment too! Cheers!
+
 ## 1.0 Introduction
 
 Are Private Hire Vehicle (PHV) to blame for rising COE prices? It has become a trending debate on everyone’s lips. While some had associated the growing number of PHVs as a key determinant, others suggested that broader economic factors and policy interventions are at play. Therefore, this op-ed seeks to unpack both ends of the debate supported by data visualisations and reputable sources. To set the flow, an overview to the evolution of Singapore’s vehicle ownership policy will first be presented to provide context, followed by a comprehensive analysis. My insights and suggestions shall be presented at the end of this op-ed as a closure to this debate.
@@ -125,7 +127,7 @@ As the government is administering a shift to vehicle supply forward to ease ris
 
 This pairing suggestion aims to discourage car dealerships from exercising greater control and influence over COE results while levelling the playing field for genuine buyers, ultimately stabilising COE premiums in the long run.
 
-## Data Appendix
+## 4.0 Data Appendix
 
 Note: The ‘View()’ function is written into the console as part of sanity check process throughout the Data Appendix instead of embedding into R Script. Thus, the ‘View()’ function shall not be discussed below.
 

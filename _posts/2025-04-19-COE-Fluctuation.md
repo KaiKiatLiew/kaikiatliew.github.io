@@ -8,7 +8,9 @@ tags: [R, Data Visualisation, Data Wrangling]
 
 ## Background
 
-This post is a continuation to the previous post titled **"High COE Prices - Are PHVs the Real Culprit?"** where gg animate function is used to portray the fluctuating COE prices across categories between Janurary 2002 to October 2024.
+This post is a continuation to the previous post titled **"High COE Prices - Are PHVs the Real Culprit?"** where the gg animate function is used to portray fluctuating COE prices across categories between Janurary 2002 and October 2024.
+
+The R codes were reproduced and documented below. Thank you for taking your time to read! There is a reaction button and comment box at the end of the article, do feel free to leave a comment too! Cheers!
 
 ## Analysis to the Fluctuating COE Prices
 

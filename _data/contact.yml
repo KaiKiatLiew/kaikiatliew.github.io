@@ -4,7 +4,7 @@
   icon: "fab fa-github"
 
 - type: x
-  icon: "fa-brands fa-x-twitter"
+  icon: "fa-brands fa-x-twitter" # icons powered by <https://fontawesome.com/>
   url: 'https://x.com/kkanalyse'
 
 - type: linkedin
