@@ -21,9 +21,7 @@ order: 4
 
 ### **Current Pursuits**
 
-📖 Currently pursuing **[Master of Analytics and Visualisation](https://www.suss.edu.sg/programmes/detail/mavi)** at the **[Singapore University of Social Sciences](https://www.suss.edu.sg/)**
-
-📚 Currently learning R Programming
+📖 **[Master of Analytics and Visualisation](https://www.suss.edu.sg/programmes/detail/mavi)** at the **[Singapore University of Social Sciences](https://www.suss.edu.sg/)**
 
 ### **Fun Facts:**
 
@@ -32,5 +30,8 @@ order: 4
 🧑🏻‍✈️ Became a one day pilot with my best buddy as my instructor!😁
 
 ### **Languages and Tools:**
+<a href="https://devicon.dev/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="python" width="40" height="40"/></a>
 <a href="https://www.r-project.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/r/r-original.svg" alt="r" width="40" height="40"/></a>
+<a href="https://devicon.dev/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rstudio/rstudio-original.svg" alt="rstudio" width="40" height="40"/></a>
 <a href="https://devicon.dev/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/icons/markdown/markdown-original.svg" alt="md" width="40" height="40"/></a>
+<a href="https://devicon.dev/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/></a>
